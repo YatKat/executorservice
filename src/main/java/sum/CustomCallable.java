@@ -10,6 +10,6 @@ public class CustomCallable implements Callable<AtomicInteger> {
 
     @Override
     public AtomicInteger call() throws Exception {
-        return SumIntegers.sumIntegersByPortions(list);
+        return null;
     }
 }
