@@ -6,7 +6,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class SumIntegers {
 
     public static List<Integer> addIntegers(List<Integer> list) {
-        for (int i = 0; i < 100; i++) {
+        for (int i = 1; i < 101; i++) {
             list.add(i);
         }
         return list;
