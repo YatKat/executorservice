@@ -1,15 +1,18 @@
 package sum;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.concurrent.Callable;
-import java.util.concurrent.CopyOnWriteArrayList;
-import java.util.concurrent.atomic.AtomicInteger;
 
-public class CustomCallable implements Callable<AtomicInteger> {
-    private  List<Integer> list = SumIntegers.addIntegers(new CopyOnWriteArrayList<>());
+public class CustomCallable implements Callable<BigDecimal> {
+    private final List<Integer> numbers;
+
+    public CustomCallable(List<Integer> numbers) {
+        this.numbers = numbers;
+    }
 
     @Override
-    public AtomicInteger call() throws Exception {
-        return null;
+    public BigDecimal call() throws Exception {
+        return new BigDecimal(numbers.stream().mapToDouble(Integer::intValue).sum());
     }
 }
